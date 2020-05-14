@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _183311088
 {
-    class Helper
+    public class HelperArmStrongSayilar
     {
     }
 }

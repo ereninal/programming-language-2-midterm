@@ -31,6 +31,16 @@ namespace _183311088
             }
         }
 
+        private void txtAlt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void txtUst_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
         private void panelBaslik_MouseDown(object sender, MouseEventArgs e)
         {
             move = 1;

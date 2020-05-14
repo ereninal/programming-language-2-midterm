@@ -538,16 +538,22 @@
             // txtAlt
             // 
             this.txtAlt.Location = new System.Drawing.Point(12, 127);
+            this.txtAlt.MaxLength = 6;
             this.txtAlt.Name = "txtAlt";
             this.txtAlt.Size = new System.Drawing.Size(95, 20);
             this.txtAlt.TabIndex = 6;
+            this.txtAlt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtAlt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAlt_KeyPress);
             // 
             // txtUst
             // 
             this.txtUst.Location = new System.Drawing.Point(113, 127);
+            this.txtUst.MaxLength = 6;
             this.txtUst.Name = "txtUst";
             this.txtUst.Size = new System.Drawing.Size(102, 20);
             this.txtUst.TabIndex = 7;
+            this.txtUst.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtUst.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUst_KeyPress);
             // 
             // lstSayilar
             // 
@@ -579,7 +585,7 @@
             this.btnBul.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnBul.Location = new System.Drawing.Point(137, 251);
             this.btnBul.Name = "btnBul";
-            this.btnBul.Size = new System.Drawing.Size(65, 31);
+            this.btnBul.Size = new System.Drawing.Size(78, 31);
             this.btnBul.TabIndex = 6;
             this.btnBul.Text = "Bul";
             this.btnBul.UseVisualStyleBackColor = false;

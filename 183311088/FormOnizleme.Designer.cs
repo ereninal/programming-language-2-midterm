@@ -324,7 +324,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormOnizleme";
-            this.Text = "FormOnizleme";
+            this.Text = "Önizleme Ekranı";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
