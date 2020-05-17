@@ -58,7 +58,7 @@
     <Compile Include="FormOnizleme.Designer.cs">
       <DependentUpon>FormOnizleme.cs</DependentUpon>
     </Compile>
-    <Compile Include="HelperArmStrongSayilar.cs" />
+    <Compile Include="HelperArmStrongNumbers.cs" />
     <Compile Include="HelperMayinTarlasi.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
