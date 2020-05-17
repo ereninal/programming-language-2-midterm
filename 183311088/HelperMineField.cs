@@ -22,15 +22,16 @@ namespace _183311088
                     btn.Text = i.ToString();
                     btn.Width = 80;
                     btn.Height = 50;
+                    //TODO: Konumlandırmadan devam edilecek.
                     btn.Click += Btn_Click;
-                    control.Controls.Add(btn); //oluşan butonlar üstüste binmez
+                    control.Controls.Add(btn); 
                 }
             }
             
         }
         private static void Btn_Click(object sender, EventArgs e)
         {
-            //Button btn = sender as Button;
+            //TODO: Dinamik buyonları kontrol et.
             Button btn = (Button)sender;
             btn.BackColor = Color.Red;
         }
