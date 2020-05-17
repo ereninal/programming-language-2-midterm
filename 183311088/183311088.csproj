@@ -59,7 +59,7 @@
       <DependentUpon>FormOnizleme.cs</DependentUpon>
     </Compile>
     <Compile Include="HelperArmStrongNumbers.cs" />
-    <Compile Include="HelperMayinTarlasi.cs" />
+    <Compile Include="HelperMineField.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAna.resx">

@@ -67,18 +67,18 @@ namespace _183311088
 
         private void txtAlt_Leave(object sender, EventArgs e)
         {
-            if (txtAlt.TextLength <= 1)
+            if (txtAlt.TextLength <= 0)
             {
                 lblControl.Text = "";
-                lblControl.Text = "Basamak Sayısı 2'den Büyük Olmalı";
+                lblControl.Text = "Boş Geçilemez!";
                 lblControl.Visible = true;
                 txtAlt.Focus();
                 txtAlt.SelectAll();
             }
-            else if (txtAlt.TextLength <= 0)
+            else if (txtAlt.TextLength <= 1) 
             {
                 lblControl.Text = "";
-                lblControl.Text = "Boş Geçilemez!";
+                lblControl.Text = "Basamak Sayısı 2'den Büyük Olmalı";
                 lblControl.Visible = true;
                 txtAlt.Focus();
                 txtAlt.SelectAll();
