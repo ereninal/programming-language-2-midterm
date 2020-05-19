@@ -44,7 +44,7 @@
             this.panelMines = new System.Windows.Forms.Panel();
             this.grpboxGiris = new System.Windows.Forms.GroupBox();
             this.numericSure = new System.Windows.Forms.NumericUpDown();
-            this.numbericMayinSayisi = new System.Windows.Forms.NumericUpDown();
+            this.numbericMinesCount = new System.Windows.Forms.NumericUpDown();
             this.lblSure = new System.Windows.Forms.Label();
             this.lblMayinSayisi = new System.Windows.Forms.Label();
             this.lblKalanSure = new System.Windows.Forms.Label();
@@ -56,7 +56,7 @@
             this.panelSoruIkı.SuspendLayout();
             this.grpboxGiris.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericSure)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numbericMayinSayisi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numbericMinesCount)).BeginInit();
             this.panelBaslik.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureboxFormIcon)).BeginInit();
             this.SuspendLayout();
@@ -228,7 +228,7 @@
             // grpboxGiris
             // 
             this.grpboxGiris.Controls.Add(this.numericSure);
-            this.grpboxGiris.Controls.Add(this.numbericMayinSayisi);
+            this.grpboxGiris.Controls.Add(this.numbericMinesCount);
             this.grpboxGiris.Controls.Add(this.lblSure);
             this.grpboxGiris.Controls.Add(this.lblMayinSayisi);
             this.grpboxGiris.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -258,24 +258,24 @@
             0,
             0});
             // 
-            // numbericMayinSayisi
+            // numbericMinesCount
             // 
-            this.numbericMayinSayisi.Location = new System.Drawing.Point(91, 17);
-            this.numbericMayinSayisi.Maximum = new decimal(new int[] {
+            this.numbericMinesCount.Location = new System.Drawing.Point(91, 17);
+            this.numbericMinesCount.Maximum = new decimal(new int[] {
             24,
             0,
             0,
             0});
-            this.numbericMayinSayisi.Minimum = new decimal(new int[] {
+            this.numbericMinesCount.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numbericMayinSayisi.Name = "numbericMayinSayisi";
-            this.numbericMayinSayisi.Size = new System.Drawing.Size(112, 21);
-            this.numbericMayinSayisi.TabIndex = 5;
-            this.numbericMayinSayisi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numbericMayinSayisi.Value = new decimal(new int[] {
+            this.numbericMinesCount.Name = "numbericMinesCount";
+            this.numbericMinesCount.Size = new System.Drawing.Size(112, 21);
+            this.numbericMinesCount.TabIndex = 5;
+            this.numbericMinesCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numbericMinesCount.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -410,7 +410,7 @@
             this.panelSoruIkı.PerformLayout();
             this.grpboxGiris.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericSure)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numbericMayinSayisi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numbericMinesCount)).EndInit();
             this.panelBaslik.ResumeLayout(false);
             this.panelBaslik.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureboxFormIcon)).EndInit();
@@ -435,7 +435,7 @@
         private System.Windows.Forms.Label lblAltSinir;
         private System.Windows.Forms.Label lblSayiBaslik;
         private System.Windows.Forms.NumericUpDown numericSure;
-        private System.Windows.Forms.NumericUpDown numbericMayinSayisi;
+        private System.Windows.Forms.NumericUpDown numbericMinesCount;
         private System.Windows.Forms.Label lblSure;
         private System.Windows.Forms.Label lblKalanSure;
         private System.Windows.Forms.Button btnBasla;

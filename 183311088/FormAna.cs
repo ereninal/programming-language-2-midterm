@@ -169,7 +169,8 @@ namespace _183311088
 
         private void btnBasla_Click(object sender, EventArgs e)
         {
-            HelperMineField.MineCreated(3, panelMines);
+            HelperMineField.MineCreatedPreview((int)numbericMinesCount.Value, panelMines);
+            
         }
 
         private void panelBaslik_MouseDown(object sender, MouseEventArgs e)
