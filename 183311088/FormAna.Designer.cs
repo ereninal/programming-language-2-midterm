@@ -331,6 +331,7 @@
             this.btnBasla.TabIndex = 5;
             this.btnBasla.Text = "Başla";
             this.btnBasla.UseVisualStyleBackColor = false;
+            this.btnBasla.Click += new System.EventHandler(this.btnBasla_Click);
             // 
             // panelBaslik
             // 

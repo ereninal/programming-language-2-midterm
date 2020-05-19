@@ -19,7 +19,8 @@ namespace _183311088
                 for (int j = 0; j <5; j++)
                 {
                     btn = new Button();
-                    btn.Name = (i*j+1).ToString();
+                    btn.Name = (j + 1).ToString();
+                    btn.Text = (j + 1).ToString();
                     btn.Width = 30;
                     btn.Height = 30;
                     btn.BackColor = Color.DimGray;
@@ -35,15 +36,25 @@ namespace _183311088
         {
             //TODO: Dinamik buyonları kontrol et.
             Button btn = (Button)sender;
+            MessageBox.Show(btn.Name.ToString());
             btn.BackColor = Color.Red;
         }
-        public static void MineCreated(int _count)
+        public static void MineCreated(int _count, Control control)
         {
             Random rnd = new Random();
-            for (int i = 0; i < _count; i++)
+            int ButonNumber,OldButonNumber=0;
+            
+            Button _btn =control.Controls.Find("button1", true).FirstOrDefault() as Button;
+            
+            
+                
+            /*for (int i = 0; i < _count; i++)
             {
-
-            }
+                ButonNumber = rnd.Next(1, 24);
+                
+                //ButonNumber = ButonNumber == OldButonNumber ? rnd.Next(1, 24) : OldButonNumber = ButonNumber;
+                
+            }*/
         }
     }
 }

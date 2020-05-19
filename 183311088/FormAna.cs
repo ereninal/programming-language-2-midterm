@@ -167,6 +167,11 @@ namespace _183311088
             HelperMineField.DinamicButton(panelMines);
         }
 
+        private void btnBasla_Click(object sender, EventArgs e)
+        {
+            HelperMineField.MineCreated(3, panelMines);
+        }
+
         private void panelBaslik_MouseDown(object sender, MouseEventArgs e)
         {
             move = 1;
