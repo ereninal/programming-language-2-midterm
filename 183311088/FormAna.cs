@@ -162,6 +162,11 @@ namespace _183311088
             }
         }
 
+        private void FormAna_Load(object sender, EventArgs e)
+        {
+            HelperMineField.DinamicButton(panelMines);
+        }
+
         private void panelBaslik_MouseDown(object sender, MouseEventArgs e)
         {
             move = 1;
