@@ -16,7 +16,7 @@ namespace _183311088
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormAna());
+            Application.Run(new FormCenter());
         }
     }
 }

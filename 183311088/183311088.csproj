@@ -46,27 +46,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormAna.cs">
+    <Compile Include="FormCenter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAna.Designer.cs">
-      <DependentUpon>FormAna.cs</DependentUpon>
+    <Compile Include="FormCenter.Designer.cs">
+      <DependentUpon>FormCenter.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormOnizleme.cs">
+    <Compile Include="FormPreview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormOnizleme.Designer.cs">
-      <DependentUpon>FormOnizleme.cs</DependentUpon>
+    <Compile Include="FormPreview.Designer.cs">
+      <DependentUpon>FormPreview.cs</DependentUpon>
     </Compile>
     <Compile Include="HelperArmStrongNumbers.cs" />
     <Compile Include="HelperMineField.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormAna.resx">
-      <DependentUpon>FormAna.cs</DependentUpon>
+    <EmbeddedResource Include="FormCenter.resx">
+      <DependentUpon>FormCenter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormOnizleme.resx">
-      <DependentUpon>FormOnizleme.cs</DependentUpon>
+    <EmbeddedResource Include="FormPreview.resx">
+      <DependentUpon>FormPreview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

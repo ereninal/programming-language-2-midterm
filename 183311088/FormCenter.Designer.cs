@@ -1,6 +1,6 @@
 ﻿namespace _183311088
 {
-    partial class FormAna
+    partial class FormCenter
     {
         /// <summary>
         /// Required designer variable.
@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAna));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCenter));
             this.panelSoruIkı = new System.Windows.Forms.Panel();
             this.lblControl = new System.Windows.Forms.Label();
-            this.btnBul = new System.Windows.Forms.Button();
-            this.lblAltBaslik = new System.Windows.Forms.Label();
-            this.lstSayilar = new System.Windows.Forms.ListBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.lblFooter = new System.Windows.Forms.Label();
+            this.listNumbers = new System.Windows.Forms.ListBox();
             this.txtUst = new System.Windows.Forms.TextBox();
             this.txtAlt = new System.Windows.Forms.TextBox();
             this.lblUstSinir = new System.Windows.Forms.Label();
             this.lblAltSinir = new System.Windows.Forms.Label();
             this.lblSayiBaslik = new System.Windows.Forms.Label();
-            this.lblSoruIkı = new System.Windows.Forms.Label();
-            this.lblSoruBir = new System.Windows.Forms.Label();
+            this.lblQuestion2 = new System.Windows.Forms.Label();
+            this.lblQestion1 = new System.Windows.Forms.Label();
             this.panelMines = new System.Windows.Forms.Panel();
             this.grpboxGiris = new System.Windows.Forms.GroupBox();
             this.numericSure = new System.Windows.Forms.NumericUpDown();
@@ -48,8 +48,8 @@
             this.lblSure = new System.Windows.Forms.Label();
             this.lblMayinSayisi = new System.Windows.Forms.Label();
             this.lblKalanSure = new System.Windows.Forms.Label();
-            this.btnBasla = new System.Windows.Forms.Button();
-            this.panelBaslik = new System.Windows.Forms.Panel();
+            this.btnStart = new System.Windows.Forms.Button();
+            this.panelHeader = new System.Windows.Forms.Panel();
             this.lblFormBaslik = new System.Windows.Forms.Label();
             this.pictureboxFormIcon = new System.Windows.Forms.PictureBox();
             this.btnExit = new System.Windows.Forms.Button();
@@ -57,7 +57,7 @@
             this.grpboxGiris.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericSure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numbericMinesCount)).BeginInit();
-            this.panelBaslik.SuspendLayout();
+            this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureboxFormIcon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,15 +66,15 @@
             this.panelSoruIkı.BackColor = System.Drawing.Color.DarkGray;
             this.panelSoruIkı.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelSoruIkı.Controls.Add(this.lblControl);
-            this.panelSoruIkı.Controls.Add(this.btnBul);
-            this.panelSoruIkı.Controls.Add(this.lblAltBaslik);
-            this.panelSoruIkı.Controls.Add(this.lstSayilar);
+            this.panelSoruIkı.Controls.Add(this.btnSearch);
+            this.panelSoruIkı.Controls.Add(this.lblFooter);
+            this.panelSoruIkı.Controls.Add(this.listNumbers);
             this.panelSoruIkı.Controls.Add(this.txtUst);
             this.panelSoruIkı.Controls.Add(this.txtAlt);
             this.panelSoruIkı.Controls.Add(this.lblUstSinir);
             this.panelSoruIkı.Controls.Add(this.lblAltSinir);
             this.panelSoruIkı.Controls.Add(this.lblSayiBaslik);
-            this.panelSoruIkı.Controls.Add(this.lblSoruIkı);
+            this.panelSoruIkı.Controls.Add(this.lblQuestion2);
             this.panelSoruIkı.Location = new System.Drawing.Point(239, 36);
             this.panelSoruIkı.Name = "panelSoruIkı";
             this.panelSoruIkı.Size = new System.Drawing.Size(233, 369);
@@ -91,41 +91,42 @@
             this.lblControl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblControl.Visible = false;
             // 
-            // btnBul
+            // btnSearch
             // 
-            this.btnBul.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnBul.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnBul.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnBul.Location = new System.Drawing.Point(137, 251);
-            this.btnBul.Name = "btnBul";
-            this.btnBul.Size = new System.Drawing.Size(78, 31);
-            this.btnBul.TabIndex = 6;
-            this.btnBul.Text = "Bul";
-            this.btnBul.UseVisualStyleBackColor = false;
-            this.btnBul.Click += new System.EventHandler(this.btnBul_Click);
+            this.btnSearch.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSearch.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSearch.Location = new System.Drawing.Point(137, 251);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(78, 31);
+            this.btnSearch.TabIndex = 6;
+            this.btnSearch.Text = "Bul";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnBul_Click);
             // 
-            // lblAltBaslik
+            // lblFooter
             // 
-            this.lblAltBaslik.BackColor = System.Drawing.Color.DarkGray;
-            this.lblAltBaslik.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblAltBaslik.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAltBaslik.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblAltBaslik.Location = new System.Drawing.Point(12, 292);
-            this.lblAltBaslik.Name = "lblAltBaslik";
-            this.lblAltBaslik.Size = new System.Drawing.Size(203, 65);
-            this.lblAltBaslik.TabIndex = 9;
-            this.lblAltBaslik.Text = "Armstrong Sayısı";
-            this.lblAltBaslik.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblFooter.BackColor = System.Drawing.Color.DarkGray;
+            this.lblFooter.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblFooter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblFooter.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblFooter.Location = new System.Drawing.Point(12, 292);
+            this.lblFooter.Name = "lblFooter";
+            this.lblFooter.Size = new System.Drawing.Size(203, 65);
+            this.lblFooter.TabIndex = 9;
+            this.lblFooter.Text = "Armstrong Sayısı";
+            this.lblFooter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lstSayilar
+            // listNumbers
             // 
-            this.lstSayilar.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lstSayilar.FormattingEnabled = true;
-            this.lstSayilar.ItemHeight = 14;
-            this.lstSayilar.Location = new System.Drawing.Point(12, 168);
-            this.lstSayilar.Name = "lstSayilar";
-            this.lstSayilar.Size = new System.Drawing.Size(119, 116);
-            this.lstSayilar.TabIndex = 8;
+            this.listNumbers.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.listNumbers.FormattingEnabled = true;
+            this.listNumbers.ItemHeight = 14;
+            this.listNumbers.Location = new System.Drawing.Point(12, 168);
+            this.listNumbers.Name = "listNumbers";
+            this.listNumbers.Size = new System.Drawing.Size(119, 116);
+            this.listNumbers.TabIndex = 8;
+            this.listNumbers.Tag = "";
             // 
             // txtUst
             // 
@@ -190,31 +191,31 @@
             this.lblSayiBaslik.Text = "- SAYI -";
             this.lblSayiBaslik.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblSoruIkı
+            // lblQuestion2
             // 
-            this.lblSoruIkı.BackColor = System.Drawing.Color.LightBlue;
-            this.lblSoruIkı.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblSoruIkı.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblSoruIkı.ForeColor = System.Drawing.SystemColors.Info;
-            this.lblSoruIkı.Location = new System.Drawing.Point(12, 6);
-            this.lblSoruIkı.Name = "lblSoruIkı";
-            this.lblSoruIkı.Size = new System.Drawing.Size(203, 23);
-            this.lblSoruIkı.TabIndex = 2;
-            this.lblSoruIkı.Text = "SORU 2 :";
-            this.lblSoruIkı.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblQuestion2.BackColor = System.Drawing.Color.LightBlue;
+            this.lblQuestion2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblQuestion2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblQuestion2.ForeColor = System.Drawing.SystemColors.Info;
+            this.lblQuestion2.Location = new System.Drawing.Point(12, 6);
+            this.lblQuestion2.Name = "lblQuestion2";
+            this.lblQuestion2.Size = new System.Drawing.Size(203, 23);
+            this.lblQuestion2.TabIndex = 2;
+            this.lblQuestion2.Text = "SORU 2 :";
+            this.lblQuestion2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblSoruBir
+            // lblQestion1
             // 
-            this.lblSoruBir.BackColor = System.Drawing.Color.LightBlue;
-            this.lblSoruBir.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblSoruBir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblSoruBir.ForeColor = System.Drawing.SystemColors.Info;
-            this.lblSoruBir.Location = new System.Drawing.Point(7, 44);
-            this.lblSoruBir.Name = "lblSoruBir";
-            this.lblSoruBir.Size = new System.Drawing.Size(212, 23);
-            this.lblSoruBir.TabIndex = 1;
-            this.lblSoruBir.Text = "SORU 1 :";
-            this.lblSoruBir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblQestion1.BackColor = System.Drawing.Color.LightBlue;
+            this.lblQestion1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblQestion1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblQestion1.ForeColor = System.Drawing.SystemColors.Info;
+            this.lblQestion1.Location = new System.Drawing.Point(7, 44);
+            this.lblQestion1.Name = "lblQestion1";
+            this.lblQestion1.Size = new System.Drawing.Size(212, 23);
+            this.lblQestion1.TabIndex = 1;
+            this.lblQestion1.Text = "SORU 1 :";
+            this.lblQestion1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelMines
             // 
@@ -320,32 +321,32 @@
             this.lblKalanSure.Text = "Kalan Süre = __";
             this.lblKalanSure.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnBasla
+            // btnStart
             // 
-            this.btnBasla.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnBasla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnBasla.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnBasla.Location = new System.Drawing.Point(154, 363);
-            this.btnBasla.Name = "btnBasla";
-            this.btnBasla.Size = new System.Drawing.Size(65, 31);
-            this.btnBasla.TabIndex = 5;
-            this.btnBasla.Text = "Başla";
-            this.btnBasla.UseVisualStyleBackColor = false;
-            this.btnBasla.Click += new System.EventHandler(this.btnBasla_Click);
+            this.btnStart.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnStart.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnStart.Location = new System.Drawing.Point(154, 363);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(65, 31);
+            this.btnStart.TabIndex = 5;
+            this.btnStart.Text = "Başla";
+            this.btnStart.UseVisualStyleBackColor = false;
+            this.btnStart.Click += new System.EventHandler(this.btnBasla_Click);
             // 
-            // panelBaslik
+            // panelHeader
             // 
-            this.panelBaslik.BackColor = System.Drawing.Color.White;
-            this.panelBaslik.Controls.Add(this.lblFormBaslik);
-            this.panelBaslik.Controls.Add(this.pictureboxFormIcon);
-            this.panelBaslik.Controls.Add(this.btnExit);
-            this.panelBaslik.Location = new System.Drawing.Point(-2, 0);
-            this.panelBaslik.Name = "panelBaslik";
-            this.panelBaslik.Size = new System.Drawing.Size(482, 33);
-            this.panelBaslik.TabIndex = 6;
-            this.panelBaslik.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBaslik_MouseDown);
-            this.panelBaslik.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelBaslik_MouseMove);
-            this.panelBaslik.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelBaslik_MouseUp);
+            this.panelHeader.BackColor = System.Drawing.Color.White;
+            this.panelHeader.Controls.Add(this.lblFormBaslik);
+            this.panelHeader.Controls.Add(this.pictureboxFormIcon);
+            this.panelHeader.Controls.Add(this.btnExit);
+            this.panelHeader.Location = new System.Drawing.Point(-2, 0);
+            this.panelHeader.Name = "panelHeader";
+            this.panelHeader.Size = new System.Drawing.Size(482, 33);
+            this.panelHeader.TabIndex = 6;
+            this.panelHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBaslik_MouseDown);
+            this.panelHeader.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelBaslik_MouseMove);
+            this.panelHeader.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelBaslik_MouseUp);
             // 
             // lblFormBaslik
             // 
@@ -393,12 +394,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(476, 406);
-            this.Controls.Add(this.panelBaslik);
-            this.Controls.Add(this.btnBasla);
+            this.Controls.Add(this.panelHeader);
+            this.Controls.Add(this.btnStart);
             this.Controls.Add(this.lblKalanSure);
             this.Controls.Add(this.grpboxGiris);
             this.Controls.Add(this.panelMines);
-            this.Controls.Add(this.lblSoruBir);
+            this.Controls.Add(this.lblQestion1);
             this.Controls.Add(this.panelSoruIkı);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormAna";
@@ -411,8 +412,8 @@
             this.grpboxGiris.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericSure)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numbericMinesCount)).EndInit();
-            this.panelBaslik.ResumeLayout(false);
-            this.panelBaslik.PerformLayout();
+            this.panelHeader.ResumeLayout(false);
+            this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureboxFormIcon)).EndInit();
             this.ResumeLayout(false);
 
@@ -421,14 +422,14 @@
         #endregion
 
         private System.Windows.Forms.Panel panelSoruIkı;
-        private System.Windows.Forms.Label lblSoruIkı;
-        private System.Windows.Forms.Label lblSoruBir;
+        private System.Windows.Forms.Label lblQuestion2;
+        private System.Windows.Forms.Label lblQestion1;
         private System.Windows.Forms.Panel panelMines;
         private System.Windows.Forms.GroupBox grpboxGiris;
         private System.Windows.Forms.Label lblMayinSayisi;
-        private System.Windows.Forms.Button btnBul;
-        private System.Windows.Forms.Label lblAltBaslik;
-        private System.Windows.Forms.ListBox lstSayilar;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Label lblFooter;
+        private System.Windows.Forms.ListBox listNumbers;
         private System.Windows.Forms.TextBox txtUst;
         private System.Windows.Forms.TextBox txtAlt;
         private System.Windows.Forms.Label lblUstSinir;
@@ -438,8 +439,8 @@
         private System.Windows.Forms.NumericUpDown numbericMinesCount;
         private System.Windows.Forms.Label lblSure;
         private System.Windows.Forms.Label lblKalanSure;
-        private System.Windows.Forms.Button btnBasla;
-        private System.Windows.Forms.Panel panelBaslik;
+        private System.Windows.Forms.Button btnStart;
+        private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.PictureBox pictureboxFormIcon;
         private System.Windows.Forms.Label lblFormBaslik;

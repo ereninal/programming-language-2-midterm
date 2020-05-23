@@ -1,6 +1,6 @@
 ﻿namespace _183311088
 {
-    partial class FormOnizleme
+    partial class FormPreview
     {
         /// <summary>
         /// Required designer variable.

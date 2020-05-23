@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace _183311088
 {
-    public partial class FormOnizleme : Form
+    public partial class FormPreview : Form
     {
-        public FormOnizleme()
+        public FormPreview()
         {
             InitializeComponent();
         }

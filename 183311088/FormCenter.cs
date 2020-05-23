@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace _183311088
 {
-    public partial class FormAna : Form
+    public partial class FormCenter : Form
     {
-        public FormAna()
+        public FormCenter()
         {
             InitializeComponent();
         }
@@ -50,12 +50,12 @@ namespace _183311088
                 {
                     DialogResult result = MessageBox.Show("Alt sınırı üst sınırdan büyük girdiniz. Yer değiştirilsin mi?", "Uyarı", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (result == DialogResult.Yes)
-                        HelperArmStrongNumbers.ArmStrongControl(int.Parse(txtUst.Text), int.Parse(txtAlt.Text), lstSayilar);
+                        HelperArmStrongNumbers.ArmStrongControl(int.Parse(txtUst.Text), int.Parse(txtAlt.Text), listNumbers);
                     else
                         txtAlt.Focus();txtAlt.SelectAll();
                 }
                 else
-                    HelperArmStrongNumbers.ArmStrongControl(int.Parse(txtAlt.Text), int.Parse(txtUst.Text), lstSayilar); lblControl.Visible = false;
+                    HelperArmStrongNumbers.ArmStrongControl(int.Parse(txtAlt.Text), int.Parse(txtUst.Text), listNumbers); lblControl.Visible = false;
             }
             else
             {
@@ -119,12 +119,12 @@ namespace _183311088
                     {
                         DialogResult result = MessageBox.Show("Alt sınırı üst sınırdan büyük girdiniz. Yer değiştirilsin mi?", "Uyarı", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                         if (result == DialogResult.Yes)
-                            HelperArmStrongNumbers.ArmStrongControl(int.Parse(txtUst.Text), int.Parse(txtAlt.Text), lstSayilar);
+                            HelperArmStrongNumbers.ArmStrongControl(int.Parse(txtUst.Text), int.Parse(txtAlt.Text), listNumbers);
                         else
                             txtAlt.Focus(); txtAlt.SelectAll();
                     }
                     else
-                        HelperArmStrongNumbers.ArmStrongControl(int.Parse(txtAlt.Text), int.Parse(txtUst.Text), lstSayilar); lblControl.Visible = false;
+                        HelperArmStrongNumbers.ArmStrongControl(int.Parse(txtAlt.Text), int.Parse(txtUst.Text), listNumbers); lblControl.Visible = false;
                 }
                 else
                 {
@@ -146,12 +146,12 @@ namespace _183311088
                     {
                         DialogResult result = MessageBox.Show("Alt sınırı üst sınırdan büyük girdiniz. Yer değiştirilsin mi?", "Uyarı", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                         if (result == DialogResult.Yes)
-                            HelperArmStrongNumbers.ArmStrongControl(int.Parse(txtUst.Text), int.Parse(txtAlt.Text), lstSayilar);
+                            HelperArmStrongNumbers.ArmStrongControl(int.Parse(txtUst.Text), int.Parse(txtAlt.Text), listNumbers);
                         else
                             txtAlt.Focus(); txtAlt.SelectAll();
                     }
                     else
-                        HelperArmStrongNumbers.ArmStrongControl(int.Parse(txtAlt.Text), int.Parse(txtUst.Text), lstSayilar); lblControl.Visible = false;
+                        HelperArmStrongNumbers.ArmStrongControl(int.Parse(txtAlt.Text), int.Parse(txtUst.Text), listNumbers); lblControl.Visible = false;
                 }
                 else
                 {
