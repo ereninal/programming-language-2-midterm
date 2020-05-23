@@ -344,9 +344,9 @@
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(482, 33);
             this.panelHeader.TabIndex = 6;
-            this.panelHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBaslik_MouseDown);
-            this.panelHeader.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelBaslik_MouseMove);
-            this.panelHeader.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelBaslik_MouseUp);
+            this.panelHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelHeader_MouseDown);
+            this.panelHeader.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelHeader_MouseMove);
+            this.panelHeader.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelHeader_MouseUp);
             // 
             // lblFormBaslik
             // 
@@ -389,7 +389,7 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // FormAna
+            // FormCenter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -402,7 +402,7 @@
             this.Controls.Add(this.lblQestion1);
             this.Controls.Add(this.panelSoruIkı);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormAna";
+            this.Name = "FormCenter";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vize";

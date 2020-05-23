@@ -12,6 +12,8 @@ namespace _183311088
     {
         private static List<Button> Mines = new List<Button>();
         protected static Button btn;
+        static bool MineUp,Look;
+        //dk 2.46 devam edecek
         public static void DinamicButton(Control control)
         {
             int ButtonCount = 1;
@@ -40,6 +42,10 @@ namespace _183311088
             Button btn = (Button)sender;
             btn.BackColor = Color.Red;
         }
+
+        #region Benim Mantığım
+
+        
         public static void MineCreatedPreview(int _count, Control control)
         {
             Random rnd = new Random();
@@ -49,9 +55,9 @@ namespace _183311088
                 ButonNumber = rnd.Next(1, 25);
                 while (OldButonNumber == ButonNumber) { ButonNumber = ButonNumber == OldButonNumber ? rnd.Next(1, 24) : ButonNumber; }
                 OldButonNumber = ButonNumber;
-                Button _btn = control.Controls.Find(ButonNumber.ToString(), true).FirstOrDefault() as Button;
+                /*Button _btn = control.Controls.Find(ButonNumber.ToString(), true).FirstOrDefault() as Button;
                 _btn.BackColor = Color.Red;
-                Mines.Add(_btn);
+                Mines.Add(_btn);*/
             }
             foreach (var item in Mines)
             {
@@ -150,5 +156,6 @@ namespace _183311088
                     Mines[i].BackColor = Color.Red;
             }
         }
+        #endregion
     }
 }
