@@ -334,7 +334,7 @@
             this.btnStart.TabIndex = 5;
             this.btnStart.Text = "Başla";
             this.btnStart.UseVisualStyleBackColor = false;
-            this.btnStart.Click += new System.EventHandler(this.btnBasla_Click);
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // panelHeader
             // 
@@ -413,7 +413,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vize";
-            this.Load += new System.EventHandler(this.FormAna_Load);
+            this.Load += new System.EventHandler(this.FormCenter_Load);
             this.panelSoruIkı.ResumeLayout(false);
             this.panelSoruIkı.PerformLayout();
             this.grpboxGiris.ResumeLayout(false);
@@ -451,8 +451,8 @@
         private System.Windows.Forms.PictureBox pictureboxFormIcon;
         private System.Windows.Forms.Label lblFormBaslik;
         private System.Windows.Forms.Label lblControl;
-        private System.Windows.Forms.Timer time;
         public System.Windows.Forms.Label lblKalanSure;
+        public System.Windows.Forms.Timer time;
     }
 }
 

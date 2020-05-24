@@ -10,21 +10,28 @@ namespace _183311088
 {
     public class HelperMineField
     {
-        
+        #region Types
+
         private static List<int> Mines = new List<int>();
         static FormCenter FormCenter = new FormCenter();
         static FormPreview FormPreview = new FormPreview();
         private static Control Control;
         protected static Button btn;
+        private static Timer Timer;
         public static int _Time;
         private static int OldTime;
+        private static int Winner;
+        private static int GreenButtonCount = 0;
+
+        #endregion
+        #region Properties
+
         public static int Time { get { return _Time; } set { _Time = value; } }
-        static bool MineUp,Look;
-        
-        static int MayinSayisi
+        static int MinesCount
         {
             get { return Mines.Count; }
         }
+        #endregion
         #region DinamicButton
 
         public static void DinamicButton(Control control)
@@ -49,47 +56,71 @@ namespace _183311088
                     ButtonCount++;
                 }
             }
-            
         }
         #endregion
         private static void Btn_Click(object sender, EventArgs e)
         {
-            FormCenter.lblKalanSure.Text = "Kalan Süre = " + OldTime.ToString();
-            Time = OldTime;
-            Button btn = (Button)sender;
-            if (MineFine(int.Parse(btn.Name)))
+            if (MinesCount != 0)
             {
-                btn.BackColor = Color.Red;
-                MessageBox.Show("Oyun Bitti");
-
+                FormCenter.lblKalanSure.Text = "Kalan Süre = " + OldTime.ToString();
+                Time = OldTime;
+                Button btn = (Button)sender;
+                if (MineFine(int.Parse(btn.Name)))
+                {
+                    btn.BackColor = Color.Red;
+                    HelperMineField.GameRestart(Control,Timer);
+                    MessageBox.Show("Oyun Bitti.\nYeniden Başlanacak");
+                }
+                else
+                {
+                    int s = MineCountButton(btn);
+                    btn.Text = s.ToString();
+                    btn.BackColor = Color.Green;
+                    GreenButtonCount++;
+                    if (Winner == GreenButtonCount)
+                    {
+                        MessageBox.Show("Tebrikler\nYeniden başlamak için 'Başla' butonuna basın!");
+                        GameRestart(Control, Timer);
+                    }
+                }
             }
             else
             {
-                int s = MineCountButton(btn);
-                btn.Text = s.ToString();
-                btn.BackColor = Color.Green;
+                MessageBox.Show("Oyun Başlamadı.");
             }
         }
-        public static void MineCreated(int sayi, Control control, int time)
+        public static void GameRestart(Control control,Timer timer)
         {
+            
+            Mines.Clear();
+            timer.Enabled = false;
+            FormCenter.time.Stop();
+            foreach  (Button button in Control.Controls)
+            {
+                button.Text = "";
+                button.BackColor = Color.DimGray;
+            }
+        }
+        public static void MineCreated(int sayi, Control control, int time,Timer timer)
+        {
+            Timer = timer;
             OldTime = time;
             _Time = time;
             Control = control;
-            if (MayinSayisi == 0)
+            if (MinesCount == 0)
             {
                 MineInsert(sayi);
+                Winner = 25 - MinesCount;
             }
             else
             {
                 DialogResult result = MessageBox.Show("Oyun yeniden başlatılsın mı?","UYARI",MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
-                   
                     Mines.Clear();
                     control.Controls.Clear();
                     DinamicButton(control);
                     MineInsert(sayi);
-                   
                     MinePreview(FormPreview.panelMine);
                     DinamicButton(FormPreview.panelMine);
                 }
@@ -119,12 +150,11 @@ namespace _183311088
         private static void MineInsert(int count)
         {
             Random rnd = new Random();
-            int ButonNumber, OldButonNumber = 0;
+            int ButonNumber;
             for (int i = 0; i < count; i++)
             {
                 ButonNumber = rnd.Next(1, 25);
-                while (OldButonNumber == ButonNumber) { ButonNumber = ButonNumber == OldButonNumber ? rnd.Next(1, 24) : ButonNumber; }
-                OldButonNumber = ButonNumber;
+                while (MineFine(ButonNumber)) { ButonNumber = rnd.Next(1, 24); }
                 Mines.Add(ButonNumber);
             }
         }

@@ -169,51 +169,55 @@ namespace _183311088
             move = 0;
         }
         #endregion
-        private void FormAna_Load(object sender, EventArgs e)
-        {
-            HelperMineField.DinamicButton(panelMines);
-        }
-        
-        private void time_Tick(object sender, EventArgs e)
-        {
+        #region FormControl
 
-            if (HelperMineField.Time == 0)
-            {
-                time.Stop();
-                MessageBox.Show("Süre Bitti.", "Game", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-            }
-            else 
-                lblKalanSure.Text = "Kalan Süre = " + HelperMineField.Time--.ToString();
-            
-                
-            
-        }
-
-        private void btnBasla_Click(object sender, EventArgs e)
-        {
-            if ((int)numbericMinesCount.Value < 24 && (int)numbericMinesCount.Value > 1)
-            {
-                HelperMineField.MineCreated((int)numbericMinesCount.Value, panelMines, (int)numericSure.Value);
-                time.Start();
-                _FormPreview = new FormPreview();
-                _FormPreview.Name = "form";
-                if(Application.OpenForms["form"]==null)
-                    _FormPreview.Show();
-
-            }
-                
-            else
-                MessageBox.Show("1-24 arasında değer girin!");
-        }
-
-        
         private void btnExit_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Uygulama Kapatılsın mı?", "Uyarı", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
                 Application.Exit();
         }
-        
+        #endregion
+
+        private void FormCenter_Load(object sender, EventArgs e)
+        {
+            HelperMineField.DinamicButton(panelMines);
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            time.Enabled = false;
+        }
+
+
+        #region MineField
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            if ((int)numbericMinesCount.Value < 25 && (int)numbericMinesCount.Value > 0)
+            {
+                HelperMineField.MineCreated((int)numbericMinesCount.Value, panelMines, (int)numericSure.Value,time);
+                time.Enabled = true;
+                _FormPreview = new FormPreview();
+                _FormPreview.Name = "form";
+                if (Application.OpenForms["form"] == null)
+                    _FormPreview.Show();
+            }
+            else
+                MessageBox.Show("1-24 arasında değer girin!");
+        }
+        private void time_Tick(object sender, EventArgs e)
+        {
+            lblKalanSure.Text = "Kalan Süre = " + HelperMineField.Time.ToString();
+            if (HelperMineField.Time == 0)
+            {
+                HelperMineField.GameRestart(panelMines,time);
+                MessageBox.Show("Süre Bitti.\nYeniden başlayın!.", "Game", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                
+            }
+            HelperMineField.Time--;
+        }
+        #endregion
     }
 }
