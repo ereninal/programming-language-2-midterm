@@ -10,10 +10,18 @@ namespace _183311088
 {
     public class HelperMineField
     {
-        private static List<Button> Mines = new List<Button>();
+        
+        private static List<int> Mines = new List<int>();
+        private static Control Control;
         protected static Button btn;
         static bool MineUp,Look;
-        //dk 2.46 devam edecek
+        
+        static int MayinSayisi
+        {
+            get { return Mines.Count; }
+        }
+        #region DinamicButton
+
         public static void DinamicButton(Control control)
         {
             int ButtonCount = 1;
@@ -28,6 +36,8 @@ namespace _183311088
                     btn.Height = 30;
                     btn.BackColor = Color.DimGray;
                     btn.TextAlign = ContentAlignment.MiddleCenter;
+                    btn.ForeColor = Color.White;
+                    btn.Font = new Font(btn.Font.Name, btn.Font.Size, FontStyle.Bold);
                     btn.Location = new Point(14+(j*37),(i*37)+12);
                     btn.Click += Btn_Click;
                     control.Controls.Add(btn);
@@ -36,126 +46,130 @@ namespace _183311088
             }
             
         }
+        #endregion
         private static void Btn_Click(object sender, EventArgs e)
         {
             
             Button btn = (Button)sender;
-            btn.BackColor = Color.Red;
+            if (MineFine(int.Parse(btn.Name)))
+            {
+                btn.BackColor = Color.Red;
+                MessageBox.Show("Oyun Bitti");
+            }
+            else
+            {
+                int s = MineCountButton(btn);
+                btn.Text = s.ToString();
+                btn.BackColor = Color.Green;
+            }
         }
+        public static void MineCreated(int sayi, Control control)
+        {
+            
+            Control = control;
+            if (MayinSayisi == 0)
+            {
+                MineInsert(sayi);
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Oyun yeniden başlatılsın mı?","UYARI",MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    Mines.Clear();
+                    control.Controls.Clear();
+                    DinamicButton(control);
+                    MineInsert(sayi);
+                    
 
-        #region Benim Mantığım
-
-        
-        public static void MineCreatedPreview(int _count, Control control)
+                }
+            }
+        }
+        private static void MineInsert(int count)
         {
             Random rnd = new Random();
-            int ButonNumber,OldButonNumber=0;
-            for (int i = 0; i < _count; i++)
+            int ButonNumber, OldButonNumber = 0;
+            for (int i = 0; i < count; i++)
             {
                 ButonNumber = rnd.Next(1, 25);
                 while (OldButonNumber == ButonNumber) { ButonNumber = ButonNumber == OldButonNumber ? rnd.Next(1, 24) : ButonNumber; }
                 OldButonNumber = ButonNumber;
-                /*Button _btn = control.Controls.Find(ButonNumber.ToString(), true).FirstOrDefault() as Button;
-                _btn.BackColor = Color.Red;
-                Mines.Add(_btn);*/
+                Mines.Add(ButonNumber);
             }
-            foreach (var item in Mines)
-            {
-                Button _btn = control.Controls.Find(item.Name.ToString(), true).FirstOrDefault() as Button;
-                if ((Button)control.Controls[(int.Parse(_btn.Name) + 1)] != null)
-                {
-                    if (Mines.Contains((Button)control.Controls[(int.Parse(_btn.Name) + 1)]))
-                    {
-                       Button btn = control.Controls.Find(Convert.ToInt32(item.Name+1).ToString(), true).FirstOrDefault() as Button;
-                        btn.Text = "Y";
-                    }
-                    else { btn.Text = "0"; }
-                    //tıklanılan yerin etrafı aranacak.
-                }
-            }
-            //FindMine(control);
         }
-        private static void FindMine(Control control)
+        private static bool MineFine(int m)
         {
-            Button[] MineCount = new Button[8];
-            Button _btn;
-            //Button _btn = control.Controls.Find(item.ToString(), true).FirstOrDefault() as Button;
-            for (int i = 1; i <25; i++)
+            bool durum = false;
+            foreach(var mayin in Mines)
             {
-                _btn = control.Controls.Find(i.ToString(), true).FirstOrDefault() as Button;
-                
-                if ((Button)control.Controls[(int.Parse(_btn.Name) + 1)] != null)
+                if (Mines.Contains(m))
                 {
-                    if (Mines.Contains((Button)control.Controls[(int.Parse(_btn.Name) + 1)]))
-                    {
-                        Mines[0] = (Button)control.Controls[(int.Parse(_btn.Name) + 1)];
-                    }
-                    else { Mines[0] = null; }
+                    durum=true;
                 }
-                if ((Button)control.Controls[(int.Parse(_btn.Name) - 1)] != null)
-                {
-                    if (Mines.Contains((Button)control.Controls[(int.Parse(_btn.Name) - 1)]))
-                    {
-                        Mines[1] = (Button)control.Controls[(int.Parse(_btn.Name) - 1)];
-                    }
-                    else { Mines[1] = null; }
-                }
-                if ((Button)control.Controls[(int.Parse(_btn.Name) - 5)] != null)
-                {
-                    if (Mines.Contains((Button)control.Controls[(int.Parse(_btn.Name) - 5)]))
-                    {
-                        Mines[2] = (Button)control.Controls[(int.Parse(_btn.Name) - 5)];
-                    }
-                    else { Mines[2] = null; }
-                }
-                if ((Button)control.Controls[(int.Parse(_btn.Name) + 5)] != null)
-                {
-                    if (Mines.Contains((Button)control.Controls[(int.Parse(_btn.Name)  +5)]))
-                    {
-                        Mines[3] = (Button)control.Controls[(int.Parse(_btn.Name) + 5)];
-                    }
-                    else { Mines[3] = null; }
-                }
-                if ((Button)control.Controls[(int.Parse(_btn.Name) + 4)] != null)
-                {
-                    if (Mines.Contains((Button)control.Controls[(int.Parse(_btn.Name) + 4)]))
-                    {
-                        Mines[4] = (Button)control.Controls[(int.Parse(_btn.Name) + 4)];
-                    }
-                    else { Mines[4] = null; }
-                }
-                if ((Button)control.Controls[(int.Parse(_btn.Text) - 4)] != null)
-                {
-                    if (Mines.Contains((Button)control.Controls[(int.Parse(_btn.Name) - 4)]))
-                    {
-                        Mines[5] = (Button)control.Controls[(int.Parse(_btn.Name) - 4)];
-                    }
-                    else { Mines[5] = null; }
-                }
-                if ((Button)control.Controls[(int.Parse(_btn.Name) + 6)] != null)
-                {
-                    if (Mines.Contains((Button)control.Controls[(int.Parse(_btn.Name) + 6)]))
-                    {
-                        Mines[6] = (Button)control.Controls[(int.Parse(_btn.Name) + 6)];
-                    }
-                    else { Mines[6] = null; }
-                }
-                if ((Button)control.Controls[(int.Parse(_btn.Name) -6 )] != null)
-                {
-                    if (Mines.Contains((Button)control.Controls[(int.Parse(_btn.Name) -6)]))
-                    {
-                        Mines[7] = (Button)control.Controls[(int.Parse(_btn.Name) -6)];
-                    }
-                    else { Mines[7] = null; }
-                }
-
             }
-            for (int i = 0; i < Mines.Count; i++)
-            {
-                if (Mines[i] != null)
-                    Mines[i].BackColor = Color.Red;
-            }
+            return durum;
         }
-        #endregion
+        private static int MineCountButton(Button button)
+        {
+            int sayi = 0;
+            if ((Button)Control.Controls.Find((int.Parse(button.Name) + 1).ToString(), false).FirstOrDefault() != null)
+            {
+                if (MineFine(int.Parse(button.Name) + 1))
+                {
+                    sayi++;
+                }
+            }
+            if ((Button)Control.Controls.Find((int.Parse(button.Name) - 1).ToString(), false).FirstOrDefault() != null)
+            {
+                if (MineFine(int.Parse(button.Name) - 1))
+                {
+                    sayi++;
+                }
+            }
+            if ((Button)Control.Controls.Find((int.Parse(button.Name) +5).ToString(), false).FirstOrDefault() != null)
+            {
+                if (MineFine(int.Parse(button.Name) + 5))
+                {
+                    sayi++;
+                }
+            }
+            if ((Button)Control.Controls.Find((int.Parse(button.Name) - 5).ToString(), false).FirstOrDefault() != null)
+            {
+                if (MineFine(int.Parse(button.Name) - 5))
+                {
+                    sayi++;
+                }
+            }
+            if ((Button)Control.Controls.Find((int.Parse(button.Name) + 6).ToString(), false).FirstOrDefault() != null)
+            {
+                if (MineFine(int.Parse(button.Name) + 6))
+                {
+                    sayi++;
+                }
+            }
+            if ((Button)Control.Controls.Find((int.Parse(button.Name) - 6).ToString(), false).FirstOrDefault() != null)
+            {
+                if (MineFine(int.Parse(button.Name) - 6))
+                {
+                    sayi++;
+                }
+            }
+            if ((Button)Control.Controls.Find((int.Parse(button.Name) - 4).ToString(), false).FirstOrDefault() != null)
+            {
+                if (MineFine(int.Parse(button.Name) - 4))
+                {
+                    sayi++;
+                }
+            }
+            if ((Button)Control.Controls.Find((int.Parse(button.Name) + 4).ToString(), false).FirstOrDefault() != null)
+            {
+                if (MineFine(int.Parse(button.Name) +4))
+                {
+                    sayi++;
+                }
+            }
+            return sayi;
+        }
+        
     }
 }

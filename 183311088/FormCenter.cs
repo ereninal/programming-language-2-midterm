@@ -16,29 +16,19 @@ namespace _183311088
         {
             InitializeComponent();
         }
+        #region ArmStrong
         int move, x, y;
-
-        private void txtAlt_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-        }
-
-        private void txtUst_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-        }
-
         private void btnBul_Click(object sender, EventArgs e)
         {
-            if(!txtAlt.Text.Equals("") && !txtUst.Text.Equals(""))
+            if (!txtAlt.Text.Equals("") && !txtUst.Text.Equals(""))
             {
-                if (int.Parse(txtAlt.Text)> int.Parse(txtUst.Text))
+                if (int.Parse(txtAlt.Text) > int.Parse(txtUst.Text))
                 {
                     DialogResult result = MessageBox.Show("Alt sınırı üst sınırdan büyük girdiniz. Yer değiştirilsin mi?", "Uyarı", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (result == DialogResult.Yes)
                         HelperArmStrongNumbers.ArmStrongControl(int.Parse(txtUst.Text), int.Parse(txtAlt.Text), listNumbers);
                     else
-                        txtAlt.Focus();txtAlt.SelectAll();
+                        txtAlt.Focus(); txtAlt.SelectAll();
                 }
                 else
                     HelperArmStrongNumbers.ArmStrongControl(int.Parse(txtAlt.Text), int.Parse(txtUst.Text), listNumbers); lblControl.Visible = false;
@@ -50,7 +40,18 @@ namespace _183311088
                 lblControl.Visible = true;
             }
         }
+        #endregion
+        #region MyControlArmstrong
 
+        private void txtAlt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void txtUst_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
         private void txtAlt_Leave(object sender, EventArgs e)
         {
             if (txtAlt.TextLength <= 0)
@@ -147,25 +148,6 @@ namespace _183311088
                 }
             }
         }
-
-        private void FormAna_Load(object sender, EventArgs e)
-        {
-            HelperMineField.DinamicButton(panelMines);
-        }
-
-        private void btnBasla_Click(object sender, EventArgs e)
-        {
-            HelperMineField.MineCreatedPreview((int)numbericMinesCount.Value, panelMines);
-            
-        }
-
-        
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Uygulama Kapatılsın mı?", "Uyarı", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes)
-                Application.Exit();
-        }
         private void panelHeader_MouseDown(object sender, MouseEventArgs e)
         {
             move = 1;
@@ -185,5 +167,27 @@ namespace _183311088
         {
             move = 0;
         }
+        #endregion
+        private void FormAna_Load(object sender, EventArgs e)
+        {
+            HelperMineField.DinamicButton(panelMines);
+        }
+
+        private void btnBasla_Click(object sender, EventArgs e)
+        {
+            if ((int)numbericMinesCount.Value < 24 && (int)numbericMinesCount.Value > 1)
+                HelperMineField.MineCreated((int)numbericMinesCount.Value, panelMines);
+            else
+                MessageBox.Show("1-24 arasında değer girin!");
+        }
+
+        
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Uygulama Kapatılsın mı?", "Uyarı", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+                Application.Exit();
+        }
+        
     }
 }
