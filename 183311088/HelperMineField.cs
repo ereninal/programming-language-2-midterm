@@ -12,8 +12,13 @@ namespace _183311088
     {
         
         private static List<int> Mines = new List<int>();
+        static FormCenter FormCenter = new FormCenter();
+        static FormPreview FormPreview = new FormPreview();
         private static Control Control;
         protected static Button btn;
+        public static int _Time;
+        private static int OldTime;
+        public static int Time { get { return _Time; } set { _Time = value; } }
         static bool MineUp,Look;
         
         static int MayinSayisi
@@ -49,12 +54,14 @@ namespace _183311088
         #endregion
         private static void Btn_Click(object sender, EventArgs e)
         {
-            
+            FormCenter.lblKalanSure.Text = "Kalan Süre = " + OldTime.ToString();
+            Time = OldTime;
             Button btn = (Button)sender;
             if (MineFine(int.Parse(btn.Name)))
             {
                 btn.BackColor = Color.Red;
                 MessageBox.Show("Oyun Bitti");
+
             }
             else
             {
@@ -63,9 +70,10 @@ namespace _183311088
                 btn.BackColor = Color.Green;
             }
         }
-        public static void MineCreated(int sayi, Control control)
+        public static void MineCreated(int sayi, Control control, int time)
         {
-            
+            OldTime = time;
+            _Time = time;
             Control = control;
             if (MayinSayisi == 0)
             {
@@ -76,14 +84,37 @@ namespace _183311088
                 DialogResult result = MessageBox.Show("Oyun yeniden başlatılsın mı?","UYARI",MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
+                   
                     Mines.Clear();
                     control.Controls.Clear();
                     DinamicButton(control);
                     MineInsert(sayi);
-                    
-
+                   
+                    MinePreview(FormPreview.panelMine);
+                    DinamicButton(FormPreview.panelMine);
                 }
             }
+        }
+        public static void MinePreview(Control control)
+        {
+            int number;
+            foreach (Button item in control.Controls)
+            {
+                Button button = (Button)control.Controls.Find((int.Parse(item.Name)).ToString(), false).FirstOrDefault();
+                number = MineCountButton(button);
+                item.Click += null;
+                item.Text = number.ToString();
+                if (MineFine(Convert.ToInt32(item.Name)))
+                {
+                    item.BackColor = Color.Red;
+                    item.Text = "";
+                }
+                else
+                {
+                    item.BackColor = Color.Green;
+                }
+            }
+            
         }
         private static void MineInsert(int count)
         {
@@ -112,42 +143,42 @@ namespace _183311088
         private static int MineCountButton(Button button)
         {
             int sayi = 0;
-            if ((Button)Control.Controls.Find((int.Parse(button.Name) + 1).ToString(), false).FirstOrDefault() != null)
+            if ((Button)Control.Controls.Find((int.Parse(button.Name) + 1).ToString(), true).FirstOrDefault() != null)
             {
                 if (MineFine(int.Parse(button.Name) + 1))
                 {
                     sayi++;
                 }
             }
-            if ((Button)Control.Controls.Find((int.Parse(button.Name) - 1).ToString(), false).FirstOrDefault() != null)
+            if ((Button)Control.Controls.Find((int.Parse(button.Name) - 1).ToString(), true).FirstOrDefault() != null)
             {
                 if (MineFine(int.Parse(button.Name) - 1))
                 {
                     sayi++;
                 }
             }
-            if ((Button)Control.Controls.Find((int.Parse(button.Name) +5).ToString(), false).FirstOrDefault() != null)
+            if ((Button)Control.Controls.Find((int.Parse(button.Name) +5).ToString(), true).FirstOrDefault() != null)
             {
                 if (MineFine(int.Parse(button.Name) + 5))
                 {
                     sayi++;
                 }
             }
-            if ((Button)Control.Controls.Find((int.Parse(button.Name) - 5).ToString(), false).FirstOrDefault() != null)
+            if ((Button)Control.Controls.Find((int.Parse(button.Name) - 5).ToString(), true).FirstOrDefault() != null)
             {
                 if (MineFine(int.Parse(button.Name) - 5))
                 {
                     sayi++;
                 }
             }
-            if ((Button)Control.Controls.Find((int.Parse(button.Name) + 6).ToString(), false).FirstOrDefault() != null)
+            if ((Button)Control.Controls.Find((int.Parse(button.Name) + 6).ToString(), true).FirstOrDefault() != null)
             {
                 if (MineFine(int.Parse(button.Name) + 6))
                 {
                     sayi++;
                 }
             }
-            if ((Button)Control.Controls.Find((int.Parse(button.Name) - 6).ToString(), false).FirstOrDefault() != null)
+            if ((Button)Control.Controls.Find((int.Parse(button.Name) - 6).ToString(), true).FirstOrDefault() != null)
             {
                 if (MineFine(int.Parse(button.Name) - 6))
                 {

@@ -16,5 +16,17 @@ namespace _183311088
         {
             InitializeComponent();
         }
+
+        private void FormPreview_Load(object sender, EventArgs e)
+        {
+            HelperMineField.DinamicButton(panelMine);
+            
+            refresh.Start();
+        }
+
+        private void refresh_Tick(object sender, EventArgs e)
+        {
+            HelperMineField.MinePreview(panelMine);
+        }
     }
 }

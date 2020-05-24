@@ -16,6 +16,7 @@ namespace _183311088
         {
             InitializeComponent();
         }
+        FormPreview _FormPreview; 
         #region ArmStrong
         int move, x, y;
         private void btnBul_Click(object sender, EventArgs e)
@@ -172,11 +173,36 @@ namespace _183311088
         {
             HelperMineField.DinamicButton(panelMines);
         }
+        
+        private void time_Tick(object sender, EventArgs e)
+        {
+
+            if (HelperMineField.Time == 0)
+            {
+                time.Stop();
+                MessageBox.Show("Süre Bitti.", "Game", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+            else 
+                lblKalanSure.Text = "Kalan Süre = " + HelperMineField.Time--.ToString();
+            
+                
+            
+        }
 
         private void btnBasla_Click(object sender, EventArgs e)
         {
             if ((int)numbericMinesCount.Value < 24 && (int)numbericMinesCount.Value > 1)
-                HelperMineField.MineCreated((int)numbericMinesCount.Value, panelMines);
+            {
+                HelperMineField.MineCreated((int)numbericMinesCount.Value, panelMines, (int)numericSure.Value);
+                time.Start();
+                _FormPreview = new FormPreview();
+                _FormPreview.Name = "form";
+                if(Application.OpenForms["form"]==null)
+                    _FormPreview.Show();
+
+            }
+                
             else
                 MessageBox.Show("1-24 arasında değer girin!");
         }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCenter));
             this.panelSoruIkı = new System.Windows.Forms.Panel();
             this.lblControl = new System.Windows.Forms.Label();
@@ -53,6 +54,7 @@
             this.lblFormBaslik = new System.Windows.Forms.Label();
             this.pictureboxFormIcon = new System.Windows.Forms.PictureBox();
             this.btnExit = new System.Windows.Forms.Button();
+            this.time = new System.Windows.Forms.Timer(this.components);
             this.panelSoruIkı.SuspendLayout();
             this.grpboxGiris.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericSure)).BeginInit();
@@ -389,6 +391,11 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // time
+            // 
+            this.time.Interval = 1000;
+            this.time.Tick += new System.EventHandler(this.time_Tick);
+            // 
             // FormCenter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -438,13 +445,14 @@
         private System.Windows.Forms.NumericUpDown numericSure;
         private System.Windows.Forms.NumericUpDown numbericMinesCount;
         private System.Windows.Forms.Label lblSure;
-        private System.Windows.Forms.Label lblKalanSure;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.PictureBox pictureboxFormIcon;
         private System.Windows.Forms.Label lblFormBaslik;
         private System.Windows.Forms.Label lblControl;
+        private System.Windows.Forms.Timer time;
+        public System.Windows.Forms.Label lblKalanSure;
     }
 }
 
