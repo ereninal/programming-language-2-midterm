@@ -33,33 +33,33 @@
             this.panelSoruIkı = new System.Windows.Forms.Panel();
             this.lblControl = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.lblFooter = new System.Windows.Forms.Label();
+            this.lblFooterArmstrong = new System.Windows.Forms.Label();
             this.listNumbers = new System.Windows.Forms.ListBox();
-            this.txtUst = new System.Windows.Forms.TextBox();
-            this.txtAlt = new System.Windows.Forms.TextBox();
+            this.txtMax = new System.Windows.Forms.TextBox();
+            this.txtMin = new System.Windows.Forms.TextBox();
             this.lblUstSinir = new System.Windows.Forms.Label();
             this.lblAltSinir = new System.Windows.Forms.Label();
-            this.lblSayiBaslik = new System.Windows.Forms.Label();
+            this.lblHeaderNumber = new System.Windows.Forms.Label();
             this.lblQuestion2 = new System.Windows.Forms.Label();
             this.lblQestion1 = new System.Windows.Forms.Label();
             this.panelMines = new System.Windows.Forms.Panel();
             this.grpboxGiris = new System.Windows.Forms.GroupBox();
-            this.numericSure = new System.Windows.Forms.NumericUpDown();
+            this.numbericTime = new System.Windows.Forms.NumericUpDown();
             this.numbericMinesCount = new System.Windows.Forms.NumericUpDown();
-            this.lblSure = new System.Windows.Forms.Label();
-            this.lblMayinSayisi = new System.Windows.Forms.Label();
-            this.lblKalanSure = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.lblMineCount = new System.Windows.Forms.Label();
+            this.lblTotalTime = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
-            this.panelHeader = new System.Windows.Forms.Panel();
-            this.lblFormBaslik = new System.Windows.Forms.Label();
+            this.panelFormHeader = new System.Windows.Forms.Panel();
+            this.lblFormHeader = new System.Windows.Forms.Label();
             this.pictureboxFormIcon = new System.Windows.Forms.PictureBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.time = new System.Windows.Forms.Timer(this.components);
             this.panelSoruIkı.SuspendLayout();
             this.grpboxGiris.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericSure)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numbericTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numbericMinesCount)).BeginInit();
-            this.panelHeader.SuspendLayout();
+            this.panelFormHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureboxFormIcon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,13 +69,13 @@
             this.panelSoruIkı.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelSoruIkı.Controls.Add(this.lblControl);
             this.panelSoruIkı.Controls.Add(this.btnSearch);
-            this.panelSoruIkı.Controls.Add(this.lblFooter);
+            this.panelSoruIkı.Controls.Add(this.lblFooterArmstrong);
             this.panelSoruIkı.Controls.Add(this.listNumbers);
-            this.panelSoruIkı.Controls.Add(this.txtUst);
-            this.panelSoruIkı.Controls.Add(this.txtAlt);
+            this.panelSoruIkı.Controls.Add(this.txtMax);
+            this.panelSoruIkı.Controls.Add(this.txtMin);
             this.panelSoruIkı.Controls.Add(this.lblUstSinir);
             this.panelSoruIkı.Controls.Add(this.lblAltSinir);
-            this.panelSoruIkı.Controls.Add(this.lblSayiBaslik);
+            this.panelSoruIkı.Controls.Add(this.lblHeaderNumber);
             this.panelSoruIkı.Controls.Add(this.lblQuestion2);
             this.panelSoruIkı.Location = new System.Drawing.Point(239, 36);
             this.panelSoruIkı.Name = "panelSoruIkı";
@@ -106,18 +106,18 @@
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnBul_Click);
             // 
-            // lblFooter
+            // lblFooterArmstrong
             // 
-            this.lblFooter.BackColor = System.Drawing.Color.DarkGray;
-            this.lblFooter.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblFooter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblFooter.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblFooter.Location = new System.Drawing.Point(12, 292);
-            this.lblFooter.Name = "lblFooter";
-            this.lblFooter.Size = new System.Drawing.Size(203, 65);
-            this.lblFooter.TabIndex = 9;
-            this.lblFooter.Text = "Armstrong Sayısı";
-            this.lblFooter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblFooterArmstrong.BackColor = System.Drawing.Color.DarkGray;
+            this.lblFooterArmstrong.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblFooterArmstrong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblFooterArmstrong.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblFooterArmstrong.Location = new System.Drawing.Point(12, 292);
+            this.lblFooterArmstrong.Name = "lblFooterArmstrong";
+            this.lblFooterArmstrong.Size = new System.Drawing.Size(203, 65);
+            this.lblFooterArmstrong.TabIndex = 9;
+            this.lblFooterArmstrong.Text = "Armstrong Sayısı";
+            this.lblFooterArmstrong.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // listNumbers
             // 
@@ -130,29 +130,29 @@
             this.listNumbers.TabIndex = 8;
             this.listNumbers.Tag = "";
             // 
-            // txtUst
+            // txtMax
             // 
-            this.txtUst.Location = new System.Drawing.Point(113, 127);
-            this.txtUst.MaxLength = 6;
-            this.txtUst.Name = "txtUst";
-            this.txtUst.Size = new System.Drawing.Size(102, 20);
-            this.txtUst.TabIndex = 7;
-            this.txtUst.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtUst.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUst_KeyDown);
-            this.txtUst.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUst_KeyPress);
-            this.txtUst.Leave += new System.EventHandler(this.txtUst_Leave);
+            this.txtMax.Location = new System.Drawing.Point(113, 127);
+            this.txtMax.MaxLength = 6;
+            this.txtMax.Name = "txtMax";
+            this.txtMax.Size = new System.Drawing.Size(102, 20);
+            this.txtMax.TabIndex = 7;
+            this.txtMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtMax.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUst_KeyDown);
+            this.txtMax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUst_KeyPress);
+            this.txtMax.Leave += new System.EventHandler(this.txtUst_Leave);
             // 
-            // txtAlt
+            // txtMin
             // 
-            this.txtAlt.Location = new System.Drawing.Point(12, 127);
-            this.txtAlt.MaxLength = 6;
-            this.txtAlt.Name = "txtAlt";
-            this.txtAlt.Size = new System.Drawing.Size(95, 20);
-            this.txtAlt.TabIndex = 6;
-            this.txtAlt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtAlt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtAlt_KeyDown);
-            this.txtAlt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAlt_KeyPress);
-            this.txtAlt.Leave += new System.EventHandler(this.txtAlt_Leave);
+            this.txtMin.Location = new System.Drawing.Point(12, 127);
+            this.txtMin.MaxLength = 6;
+            this.txtMin.Name = "txtMin";
+            this.txtMin.Size = new System.Drawing.Size(95, 20);
+            this.txtMin.TabIndex = 6;
+            this.txtMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtMin.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtAlt_KeyDown);
+            this.txtMin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAlt_KeyPress);
+            this.txtMin.Leave += new System.EventHandler(this.txtAlt_Leave);
             // 
             // lblUstSinir
             // 
@@ -180,18 +180,18 @@
             this.lblAltSinir.Text = "Alt Sınır";
             this.lblAltSinir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblSayiBaslik
+            // lblHeaderNumber
             // 
-            this.lblSayiBaslik.BackColor = System.Drawing.Color.Azure;
-            this.lblSayiBaslik.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblSayiBaslik.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblSayiBaslik.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.lblSayiBaslik.Location = new System.Drawing.Point(12, 74);
-            this.lblSayiBaslik.Name = "lblSayiBaslik";
-            this.lblSayiBaslik.Size = new System.Drawing.Size(203, 23);
-            this.lblSayiBaslik.TabIndex = 3;
-            this.lblSayiBaslik.Text = "- SAYI -";
-            this.lblSayiBaslik.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblHeaderNumber.BackColor = System.Drawing.Color.Azure;
+            this.lblHeaderNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblHeaderNumber.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblHeaderNumber.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.lblHeaderNumber.Location = new System.Drawing.Point(12, 74);
+            this.lblHeaderNumber.Name = "lblHeaderNumber";
+            this.lblHeaderNumber.Size = new System.Drawing.Size(203, 23);
+            this.lblHeaderNumber.TabIndex = 3;
+            this.lblHeaderNumber.Text = "- SAYI -";
+            this.lblHeaderNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblQuestion2
             // 
@@ -230,10 +230,10 @@
             // 
             // grpboxGiris
             // 
-            this.grpboxGiris.Controls.Add(this.numericSure);
+            this.grpboxGiris.Controls.Add(this.numbericTime);
             this.grpboxGiris.Controls.Add(this.numbericMinesCount);
-            this.grpboxGiris.Controls.Add(this.lblSure);
-            this.grpboxGiris.Controls.Add(this.lblMayinSayisi);
+            this.grpboxGiris.Controls.Add(this.lblTime);
+            this.grpboxGiris.Controls.Add(this.lblMineCount);
             this.grpboxGiris.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.grpboxGiris.ForeColor = System.Drawing.SystemColors.Highlight;
             this.grpboxGiris.Location = new System.Drawing.Point(10, 282);
@@ -243,19 +243,19 @@
             this.grpboxGiris.TabStop = false;
             this.grpboxGiris.Text = "Paremetreler";
             // 
-            // numericSure
+            // numbericTime
             // 
-            this.numericSure.Location = new System.Drawing.Point(91, 42);
-            this.numericSure.Minimum = new decimal(new int[] {
+            this.numbericTime.Location = new System.Drawing.Point(91, 42);
+            this.numbericTime.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericSure.Name = "numericSure";
-            this.numericSure.Size = new System.Drawing.Size(112, 21);
-            this.numericSure.TabIndex = 5;
-            this.numericSure.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numericSure.Value = new decimal(new int[] {
+            this.numbericTime.Name = "numbericTime";
+            this.numbericTime.Size = new System.Drawing.Size(112, 21);
+            this.numbericTime.TabIndex = 5;
+            this.numbericTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numbericTime.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -284,44 +284,44 @@
             0,
             0});
             // 
-            // lblSure
+            // lblTime
             // 
-            this.lblSure.BackColor = System.Drawing.Color.Gainsboro;
-            this.lblSure.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblSure.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblSure.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblSure.Location = new System.Drawing.Point(6, 42);
-            this.lblSure.Name = "lblSure";
-            this.lblSure.Size = new System.Drawing.Size(78, 23);
-            this.lblSure.TabIndex = 4;
-            this.lblSure.Text = "Süre (sn) =";
-            this.lblSure.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblTime.BackColor = System.Drawing.Color.Gainsboro;
+            this.lblTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblTime.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblTime.Location = new System.Drawing.Point(6, 42);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(78, 23);
+            this.lblTime.TabIndex = 4;
+            this.lblTime.Text = "Süre (sn) =";
+            this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblMayinSayisi
+            // lblMineCount
             // 
-            this.lblMayinSayisi.BackColor = System.Drawing.Color.Gainsboro;
-            this.lblMayinSayisi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblMayinSayisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblMayinSayisi.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblMayinSayisi.Location = new System.Drawing.Point(6, 17);
-            this.lblMayinSayisi.Name = "lblMayinSayisi";
-            this.lblMayinSayisi.Size = new System.Drawing.Size(78, 23);
-            this.lblMayinSayisi.TabIndex = 3;
-            this.lblMayinSayisi.Text = "Mayın Sayısı =";
-            this.lblMayinSayisi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblMineCount.BackColor = System.Drawing.Color.Gainsboro;
+            this.lblMineCount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblMineCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblMineCount.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblMineCount.Location = new System.Drawing.Point(6, 17);
+            this.lblMineCount.Name = "lblMineCount";
+            this.lblMineCount.Size = new System.Drawing.Size(78, 23);
+            this.lblMineCount.TabIndex = 3;
+            this.lblMineCount.Text = "Mayın Sayısı =";
+            this.lblMineCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblKalanSure
+            // lblTotalTime
             // 
-            this.lblKalanSure.BackColor = System.Drawing.Color.SkyBlue;
-            this.lblKalanSure.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblKalanSure.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblKalanSure.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblKalanSure.Location = new System.Drawing.Point(10, 364);
-            this.lblKalanSure.Name = "lblKalanSure";
-            this.lblKalanSure.Size = new System.Drawing.Size(138, 30);
-            this.lblKalanSure.TabIndex = 3;
-            this.lblKalanSure.Text = "Kalan Süre = __";
-            this.lblKalanSure.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTotalTime.BackColor = System.Drawing.Color.SkyBlue;
+            this.lblTotalTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTotalTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblTotalTime.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblTotalTime.Location = new System.Drawing.Point(10, 364);
+            this.lblTotalTime.Name = "lblTotalTime";
+            this.lblTotalTime.Size = new System.Drawing.Size(138, 30);
+            this.lblTotalTime.TabIndex = 3;
+            this.lblTotalTime.Text = "Kalan Süre = __";
+            this.lblTotalTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnStart
             // 
@@ -336,29 +336,29 @@
             this.btnStart.UseVisualStyleBackColor = false;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
-            // panelHeader
+            // panelFormHeader
             // 
-            this.panelHeader.BackColor = System.Drawing.Color.White;
-            this.panelHeader.Controls.Add(this.lblFormBaslik);
-            this.panelHeader.Controls.Add(this.pictureboxFormIcon);
-            this.panelHeader.Controls.Add(this.btnExit);
-            this.panelHeader.Location = new System.Drawing.Point(-2, 0);
-            this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(482, 33);
-            this.panelHeader.TabIndex = 6;
-            this.panelHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelHeader_MouseDown);
-            this.panelHeader.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelHeader_MouseMove);
-            this.panelHeader.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelHeader_MouseUp);
+            this.panelFormHeader.BackColor = System.Drawing.Color.White;
+            this.panelFormHeader.Controls.Add(this.lblFormHeader);
+            this.panelFormHeader.Controls.Add(this.pictureboxFormIcon);
+            this.panelFormHeader.Controls.Add(this.btnExit);
+            this.panelFormHeader.Location = new System.Drawing.Point(-2, 0);
+            this.panelFormHeader.Name = "panelFormHeader";
+            this.panelFormHeader.Size = new System.Drawing.Size(482, 33);
+            this.panelFormHeader.TabIndex = 6;
+            this.panelFormHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelHeader_MouseDown);
+            this.panelFormHeader.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelHeader_MouseMove);
+            this.panelFormHeader.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelHeader_MouseUp);
             // 
-            // lblFormBaslik
+            // lblFormHeader
             // 
-            this.lblFormBaslik.AutoSize = true;
-            this.lblFormBaslik.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblFormBaslik.Location = new System.Drawing.Point(37, 10);
-            this.lblFormBaslik.Name = "lblFormBaslik";
-            this.lblFormBaslik.Size = new System.Drawing.Size(30, 15);
-            this.lblFormBaslik.TabIndex = 7;
-            this.lblFormBaslik.Text = "Vize";
+            this.lblFormHeader.AutoSize = true;
+            this.lblFormHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblFormHeader.Location = new System.Drawing.Point(37, 10);
+            this.lblFormHeader.Name = "lblFormHeader";
+            this.lblFormHeader.Size = new System.Drawing.Size(30, 15);
+            this.lblFormHeader.TabIndex = 7;
+            this.lblFormHeader.Text = "Vize";
             // 
             // pictureboxFormIcon
             // 
@@ -401,9 +401,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(476, 406);
-            this.Controls.Add(this.panelHeader);
+            this.Controls.Add(this.panelFormHeader);
             this.Controls.Add(this.btnStart);
-            this.Controls.Add(this.lblKalanSure);
+            this.Controls.Add(this.lblTotalTime);
             this.Controls.Add(this.grpboxGiris);
             this.Controls.Add(this.panelMines);
             this.Controls.Add(this.lblQestion1);
@@ -417,10 +417,10 @@
             this.panelSoruIkı.ResumeLayout(false);
             this.panelSoruIkı.PerformLayout();
             this.grpboxGiris.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericSure)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numbericTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numbericMinesCount)).EndInit();
-            this.panelHeader.ResumeLayout(false);
-            this.panelHeader.PerformLayout();
+            this.panelFormHeader.ResumeLayout(false);
+            this.panelFormHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureboxFormIcon)).EndInit();
             this.ResumeLayout(false);
 
@@ -433,25 +433,25 @@
         private System.Windows.Forms.Label lblQestion1;
         private System.Windows.Forms.Panel panelMines;
         private System.Windows.Forms.GroupBox grpboxGiris;
-        private System.Windows.Forms.Label lblMayinSayisi;
+        private System.Windows.Forms.Label lblMineCount;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Label lblFooter;
+        private System.Windows.Forms.Label lblFooterArmstrong;
         private System.Windows.Forms.ListBox listNumbers;
-        private System.Windows.Forms.TextBox txtUst;
-        private System.Windows.Forms.TextBox txtAlt;
+        private System.Windows.Forms.TextBox txtMax;
+        private System.Windows.Forms.TextBox txtMin;
         private System.Windows.Forms.Label lblUstSinir;
         private System.Windows.Forms.Label lblAltSinir;
-        private System.Windows.Forms.Label lblSayiBaslik;
-        private System.Windows.Forms.NumericUpDown numericSure;
+        private System.Windows.Forms.Label lblHeaderNumber;
+        private System.Windows.Forms.NumericUpDown numbericTime;
         private System.Windows.Forms.NumericUpDown numbericMinesCount;
-        private System.Windows.Forms.Label lblSure;
+        private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Button btnStart;
-        private System.Windows.Forms.Panel panelHeader;
+        private System.Windows.Forms.Panel panelFormHeader;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.PictureBox pictureboxFormIcon;
-        private System.Windows.Forms.Label lblFormBaslik;
+        private System.Windows.Forms.Label lblFormHeader;
         private System.Windows.Forms.Label lblControl;
-        public System.Windows.Forms.Label lblKalanSure;
+        public System.Windows.Forms.Label lblTotalTime;
         public System.Windows.Forms.Timer time;
     }
 }

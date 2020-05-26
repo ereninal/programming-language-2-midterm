@@ -21,18 +21,18 @@ namespace _183311088
         int move, x, y;
         private void btnBul_Click(object sender, EventArgs e)
         {
-            if (!txtAlt.Text.Equals("") && !txtUst.Text.Equals(""))
+            if (!txtMin.Text.Equals("") && !txtMax.Text.Equals(""))
             {
-                if (int.Parse(txtAlt.Text) > int.Parse(txtUst.Text))
+                if (int.Parse(txtMin.Text) > int.Parse(txtMax.Text))
                 {
                     DialogResult result = MessageBox.Show("Alt sınırı üst sınırdan büyük girdiniz. Yer değiştirilsin mi?", "Uyarı", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (result == DialogResult.Yes)
-                        HelperArmStrongNumbers.ArmStrongControl(int.Parse(txtUst.Text), int.Parse(txtAlt.Text), listNumbers);
+                        HelperArmStrongNumbers.ArmStrongControl(int.Parse(txtMax.Text), int.Parse(txtMin.Text), listNumbers);
                     else
-                        txtAlt.Focus(); txtAlt.SelectAll();
+                        txtMin.Focus(); txtMin.SelectAll();
                 }
                 else
-                    HelperArmStrongNumbers.ArmStrongControl(int.Parse(txtAlt.Text), int.Parse(txtUst.Text), listNumbers); lblControl.Visible = false;
+                    HelperArmStrongNumbers.ArmStrongControl(int.Parse(txtMin.Text), int.Parse(txtMax.Text), listNumbers); lblControl.Visible = false;
             }
             else
             {
@@ -55,21 +55,21 @@ namespace _183311088
         }
         private void txtAlt_Leave(object sender, EventArgs e)
         {
-            if (txtAlt.TextLength <= 0)
+            if (txtMin.TextLength <= 0)
             {
                 lblControl.Text = "";
                 lblControl.Text = "Boş Geçilemez!";
                 lblControl.Visible = true;
-                txtAlt.Focus();
-                txtAlt.SelectAll();
+                txtMin.Focus();
+                txtMin.SelectAll();
             }
-            else if (txtAlt.TextLength <= 1) 
+            else if (txtMin.TextLength <= 1) 
             {
                 lblControl.Text = "";
                 lblControl.Text = "Basamak Sayısı 2'den Büyük Olmalı";
                 lblControl.Visible = true;
-                txtAlt.Focus();
-                txtAlt.SelectAll();
+                txtMin.Focus();
+                txtMin.SelectAll();
             }
             else
                 lblControl.Visible = false;
@@ -77,21 +77,21 @@ namespace _183311088
 
         private void txtUst_Leave(object sender, EventArgs e)
         {
-            if (txtUst.TextLength <= 1)
+            if (txtMax.TextLength <= 1)
             {
                 lblControl.Text = "";
                 lblControl.Text = "Basamak Sayısı 2'den Büyük Olmalı";
                 lblControl.Visible = true;
-                txtUst.Focus();
-                txtUst.SelectAll();
+                txtMax.Focus();
+                txtMax.SelectAll();
             }
-            else if (txtUst.TextLength <= 0)
+            else if (txtMax.TextLength <= 0)
             {
                 lblControl.Text = "";
                 lblControl.Text = "Boş Geçilemez!";
                 lblControl.Visible = true;
-                txtUst.Focus();
-                txtUst.SelectAll();
+                txtMax.Focus();
+                txtMax.SelectAll();
             }
             else
                 lblControl.Visible = false;
@@ -101,18 +101,18 @@ namespace _183311088
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (!txtAlt.Text.Equals("") && !txtUst.Text.Equals(""))
+                if (!txtMin.Text.Equals("") && !txtMax.Text.Equals(""))
                 {
-                    if (int.Parse(txtAlt.Text) > int.Parse(txtUst.Text))
+                    if (int.Parse(txtMin.Text) > int.Parse(txtMax.Text))
                     {
                         DialogResult result = MessageBox.Show("Alt sınırı üst sınırdan büyük girdiniz. Yer değiştirilsin mi?", "Uyarı", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                         if (result == DialogResult.Yes)
-                            HelperArmStrongNumbers.ArmStrongControl(int.Parse(txtUst.Text), int.Parse(txtAlt.Text), listNumbers);
+                            HelperArmStrongNumbers.ArmStrongControl(int.Parse(txtMax.Text), int.Parse(txtMin.Text), listNumbers);
                         else
-                            txtAlt.Focus(); txtAlt.SelectAll();
+                            txtMin.Focus(); txtMin.SelectAll();
                     }
                     else
-                        HelperArmStrongNumbers.ArmStrongControl(int.Parse(txtAlt.Text), int.Parse(txtUst.Text), listNumbers); lblControl.Visible = false;
+                        HelperArmStrongNumbers.ArmStrongControl(int.Parse(txtMin.Text), int.Parse(txtMax.Text), listNumbers); lblControl.Visible = false;
                 }
                 else
                 {
@@ -128,18 +128,18 @@ namespace _183311088
 
             if (e.KeyCode == Keys.Enter)
             {
-                if (!txtAlt.Text.Equals("") && !txtUst.Text.Equals(""))
+                if (!txtMin.Text.Equals("") && !txtMax.Text.Equals(""))
                 {
-                    if (int.Parse(txtAlt.Text) > int.Parse(txtUst.Text))
+                    if (int.Parse(txtMin.Text) > int.Parse(txtMax.Text))
                     {
                         DialogResult result = MessageBox.Show("Alt sınırı üst sınırdan büyük girdiniz. Yer değiştirilsin mi?", "Uyarı", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                         if (result == DialogResult.Yes)
-                            HelperArmStrongNumbers.ArmStrongControl(int.Parse(txtUst.Text), int.Parse(txtAlt.Text), listNumbers);
+                            HelperArmStrongNumbers.ArmStrongControl(int.Parse(txtMax.Text), int.Parse(txtMin.Text), listNumbers);
                         else
-                            txtAlt.Focus(); txtAlt.SelectAll();
+                            txtMin.Focus(); txtMin.SelectAll();
                     }
                     else
-                        HelperArmStrongNumbers.ArmStrongControl(int.Parse(txtAlt.Text), int.Parse(txtUst.Text), listNumbers); lblControl.Visible = false;
+                        HelperArmStrongNumbers.ArmStrongControl(int.Parse(txtMin.Text), int.Parse(txtMax.Text), listNumbers); lblControl.Visible = false;
                 }
                 else
                 {
@@ -197,7 +197,7 @@ namespace _183311088
         {
             if ((int)numbericMinesCount.Value < 25 && (int)numbericMinesCount.Value > 0)
             {
-                HelperMineField.MineCreated((int)numbericMinesCount.Value, panelMines, (int)numericSure.Value,time);
+                HelperMineField.MineCreated((int)numbericMinesCount.Value, panelMines, (int)numbericTime.Value,time);
                 time.Enabled = true;
                 _FormPreview = new FormPreview();
                 _FormPreview.Name = "form";
@@ -209,7 +209,7 @@ namespace _183311088
         }
         private void time_Tick(object sender, EventArgs e)
         {
-            lblKalanSure.Text = "Kalan Süre = " + HelperMineField.Time.ToString();
+            lblTotalTime.Text = "Kalan Süre = " + HelperMineField.Time.ToString();
             if (HelperMineField.Time == 0)
             {
                 HelperMineField.GameRestart(panelMines,time);
